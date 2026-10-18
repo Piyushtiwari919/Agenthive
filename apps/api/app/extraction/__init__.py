@@ -1,0 +1,1 @@
+"""Provider-abstracted semantic & procedural extraction pipeline (C-03, NFR-004)."""

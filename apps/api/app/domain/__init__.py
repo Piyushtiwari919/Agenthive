@@ -1,0 +1,1 @@
+"""Typed Pydantic v2 domain models and schemas for AgentHive."""

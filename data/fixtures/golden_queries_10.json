@@ -1,0 +1,86 @@
+{
+  "tenant_id": "alpha-eng",
+  "description": "10-Query Golden Set for FR-006, FR-007, and K-03 Top-3 Retrieval Precision Evaluation (>=80% target)",
+  "queries": [
+    {
+      "query_id": "GQ-01",
+      "query": "PaymentGateway timeout_ms spike mitigation and CircuitBreaker pool configuration",
+      "agent_id": "agent-alpha-coder",
+      "expected_idempotency_keys": ["seed-alpha-ep-001", "seed-alpha-ep-002", "seed-alpha-ep-003"],
+      "expected_entities": ["PaymentGateway", "CircuitBreaker"],
+      "expected_procedure": "Mitigate PaymentGateway Timeout Spike"
+    },
+    {
+      "query_id": "GQ-02",
+      "query": "AuthService token_ttl_min signing key rotation and TokenVault JWKS rollover",
+      "agent_id": "agent-alpha-coder",
+      "expected_idempotency_keys": ["seed-alpha-ep-004", "seed-alpha-ep-005", "seed-alpha-ep-006"],
+      "expected_entities": ["AuthService", "TokenVault"],
+      "expected_procedure": "Rotate AuthService Signing Keys"
+    },
+    {
+      "query_id": "GQ-03",
+      "query": "LedgerWorker reconciliation batch deadlock recovery and FalkorDB graph transaction retry",
+      "agent_id": "agent-alpha-coder",
+      "expected_idempotency_keys": ["seed-alpha-ep-007", "seed-alpha-ep-008", "seed-alpha-ep-009"],
+      "expected_entities": ["LedgerWorker", "FalkorDB"],
+      "expected_procedure": "Recover LedgerWorker Deadlock"
+    },
+    {
+      "query_id": "GQ-04",
+      "query": "OrderRouter max_connections backpressure throttling and RateLimiter burst policy",
+      "agent_id": "agent-alpha-coder",
+      "expected_idempotency_keys": ["seed-alpha-ep-010", "seed-alpha-ep-011", "seed-alpha-ep-012"],
+      "expected_entities": ["OrderRouter", "RateLimiter"],
+      "expected_procedure": "Throttle OrderRouter Backpressure"
+    },
+    {
+      "query_id": "GQ-05",
+      "query": "WebhookDispatcher DeadLetterQueue replay and RetryScheduler exponential backoff",
+      "agent_id": "agent-alpha-coder",
+      "expected_idempotency_keys": ["seed-alpha-ep-013", "seed-alpha-ep-014", "seed-alpha-ep-015"],
+      "expected_entities": ["WebhookDispatcher", "DeadLetterQueue", "RetryScheduler"],
+      "expected_procedure": "Replay WebhookDispatcher DeadLetterQueue"
+    },
+    {
+      "query_id": "GQ-06",
+      "query": "RiskEngine FraudDetector scoring latency and CheckoutAPI synchronous fallback",
+      "agent_id": "agent-alpha-coder",
+      "expected_idempotency_keys": ["seed-alpha-ep-016", "seed-alpha-ep-017", "seed-alpha-ep-018"],
+      "expected_entities": ["RiskEngine", "FraudDetector", "CheckoutAPI"],
+      "expected_procedure": "Failover RiskEngine Fraud Scoring"
+    },
+    {
+      "query_id": "GQ-07",
+      "query": "SchemaRegistry protobuf compatibility check and IdempotencyFilter payload hash validation",
+      "agent_id": "agent-alpha-coder",
+      "expected_idempotency_keys": ["seed-alpha-ep-019", "seed-alpha-ep-020", "seed-alpha-ep-021"],
+      "expected_entities": ["SchemaRegistry", "IdempotencyFilter"],
+      "expected_procedure": "Validate SchemaRegistry Protobuf Rollout"
+    },
+    {
+      "query_id": "GQ-08",
+      "query": "SessionStore cache_ttl_sec eviction storm and MerchantPortal session pinning",
+      "agent_id": "agent-alpha-coder",
+      "expected_idempotency_keys": ["seed-alpha-ep-022", "seed-alpha-ep-023", "seed-alpha-ep-024"],
+      "expected_entities": ["SessionStore", "MerchantPortal"],
+      "expected_procedure": "Stabilize SessionStore Eviction Storm"
+    },
+    {
+      "query_id": "GQ-09",
+      "query": "SettlementJob CurrencyConverter FX rate staleness and ReconciliationEngine audit",
+      "agent_id": "agent-alpha-coder",
+      "expected_idempotency_keys": ["seed-alpha-ep-025", "seed-alpha-ep-026", "seed-alpha-ep-027"],
+      "expected_entities": ["SettlementJob", "CurrencyConverter", "ReconciliationEngine"],
+      "expected_procedure": "Resync CurrencyConverter Settlement Rates"
+    },
+    {
+      "query_id": "GQ-10",
+      "query": "InvoiceGenerator NotificationHub delivery lag and AuditTrail TelemetryCollector export",
+      "agent_id": "agent-alpha-coder",
+      "expected_idempotency_keys": ["seed-alpha-ep-028", "seed-alpha-ep-029", "seed-alpha-ep-030"],
+      "expected_entities": ["InvoiceGenerator", "NotificationHub", "AuditTrail", "TelemetryCollector"],
+      "expected_procedure": "Flush InvoiceGenerator Notification Queue"
+    }
+  ]
+}

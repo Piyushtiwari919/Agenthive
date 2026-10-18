@@ -1,0 +1,1 @@
+"""Persistent background extraction job worker."""

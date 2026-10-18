@@ -1,0 +1,31 @@
+{
+  "tenant_id": "alpha-eng",
+  "description": "25-Entity Canonical Answer Key for FR-003 Semantic Extraction Evaluation (>=70% target)",
+  "entities": [
+    {"canonical_key": "paymentgateway", "canonical_name": "PaymentGateway", "entity_type": "Service"},
+    {"canonical_key": "authservice", "canonical_name": "AuthService", "entity_type": "Service"},
+    {"canonical_key": "falkordb", "canonical_name": "FalkorDB", "entity_type": "Database"},
+    {"canonical_key": "ledgerworker", "canonical_name": "LedgerWorker", "entity_type": "Service"},
+    {"canonical_key": "orderrouter", "canonical_name": "OrderRouter", "entity_type": "Service"},
+    {"canonical_key": "riskengine", "canonical_name": "RiskEngine", "entity_type": "Service"},
+    {"canonical_key": "webhookdispatcher", "canonical_name": "WebhookDispatcher", "entity_type": "Service"},
+    {"canonical_key": "invoicegenerator", "canonical_name": "InvoiceGenerator", "entity_type": "Service"},
+    {"canonical_key": "tokenvault", "canonical_name": "TokenVault", "entity_type": "SecurityComponent"},
+    {"canonical_key": "ratelimiter", "canonical_name": "RateLimiter", "entity_type": "Middleware"},
+    {"canonical_key": "schemaregistry", "canonical_name": "SchemaRegistry", "entity_type": "Infrastructure"},
+    {"canonical_key": "sessionstore", "canonical_name": "SessionStore", "entity_type": "Component"},
+    {"canonical_key": "audittrail", "canonical_name": "AuditTrail", "entity_type": "ComplianceComponent"},
+    {"canonical_key": "checkoutapi", "canonical_name": "CheckoutAPI", "entity_type": "Service"},
+    {"canonical_key": "frauddetector", "canonical_name": "FraudDetector", "entity_type": "Service"},
+    {"canonical_key": "settlementjob", "canonical_name": "SettlementJob", "entity_type": "BatchWorker"},
+    {"canonical_key": "merchantportal", "canonical_name": "MerchantPortal", "entity_type": "FrontendApp"},
+    {"canonical_key": "notificationhub", "canonical_name": "NotificationHub", "entity_type": "Service"},
+    {"canonical_key": "currencyconverter", "canonical_name": "CurrencyConverter", "entity_type": "Service"},
+    {"canonical_key": "reconciliationengine", "canonical_name": "ReconciliationEngine", "entity_type": "Service"},
+    {"canonical_key": "idempotencyfilter", "canonical_name": "IdempotencyFilter", "entity_type": "Middleware"},
+    {"canonical_key": "retryscheduler", "canonical_name": "RetryScheduler", "entity_type": "Component"},
+    {"canonical_key": "circuitbreaker", "canonical_name": "CircuitBreaker", "entity_type": "Pattern"},
+    {"canonical_key": "deadletterqueue", "canonical_name": "DeadLetterQueue", "entity_type": "Infrastructure"},
+    {"canonical_key": "telemetrycollector", "canonical_name": "TelemetryCollector", "entity_type": "Observability"}
+  ]
+}

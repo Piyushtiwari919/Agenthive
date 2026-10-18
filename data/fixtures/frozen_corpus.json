@@ -1,0 +1,35 @@
+{
+  "seeded_at": "2026-10-18T16:31:24.838627+00:00",
+  "duration_ms": 3404.01,
+  "total_episodes": 120,
+  "tenants": {
+    "alpha-eng": {
+      "tenant_id": "alpha-eng",
+      "episode_count": 85,
+      "session_count": 15,
+      "entity_count": 25,
+      "current_fact_count": 37,
+      "superseded_fact_count": 33,
+      "confirmed_procedure_count": 8,
+      "proposed_procedure_count": 2,
+      "registered_agent_count": 3,
+      "pending_handoff_count": 17,
+      "active_task_count": 17,
+      "pending_extraction_jobs": 0
+    },
+    "beta-sec": {
+      "tenant_id": "beta-sec",
+      "episode_count": 35,
+      "session_count": 3,
+      "entity_count": 6,
+      "current_fact_count": 8,
+      "superseded_fact_count": 251,
+      "confirmed_procedure_count": 1,
+      "proposed_procedure_count": 0,
+      "registered_agent_count": 2,
+      "pending_handoff_count": 5,
+      "active_task_count": 5,
+      "pending_extraction_jobs": 0
+    }
+  }
+}

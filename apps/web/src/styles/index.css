@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #060913;
+    color: #f1f5f9;
+    overflow-x: hidden;
+  }
+}
+
+@keyframes procedureGlowPulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(34, 211, 238, 0.55),
+      0 0 22px 4px rgba(99, 102, 241, 0.65);
+    border-color: #22d3ee;
+  }
+  50% {
+    box-shadow:
+      0 0 0 8px rgba(34, 211, 238, 0),
+      0 0 34px 10px rgba(34, 211, 238, 0.85);
+    border-color: #67e8f9;
+  }
+}
+
+.procedure-node-active-glow {
+  animation: procedureGlowPulse 2s infinite ease-in-out;
+  border-width: 2px !important;
+  border-color: #22d3ee !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .procedure-node-active-glow {
+    animation: none !important;
+    border-width: 3px !important;
+    border-color: #22d3ee !important;
+    box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.35) !important;
+  }
+}
+
+/* React Flow Dark Control-Room Customizations */
+.react-flow__attribution {
+  background: transparent !important;
+  color: #475569 !important;
+}
+
+.react-flow__controls {
+  background: #0b1021 !important;
+  border: 1px solid #1e293b !important;
+  border-radius: 0.5rem !important;
+  overflow: hidden;
+}
+
+.react-flow__controls-button {
+  background: #0b1021 !important;
+  color: #cbd5e1 !important;
+  border-bottom: 1px solid #1e293b !important;
+  fill: #cbd5e1 !important;
+}
+
+.react-flow__controls-button:hover {
+  background: #1e293b !important;
+}
