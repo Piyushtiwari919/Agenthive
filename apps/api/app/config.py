@@ -22,7 +22,9 @@ class Settings(BaseSettings):
         extra="ignore",
     )
 
-    agenthive_env: Literal["demo", "production", "test"] = Field(default="demo", alias="AGENTHIVE_ENV")
+    agenthive_env: Literal["demo", "production", "test"] = Field(
+        default="demo", alias="AGENTHIVE_ENV"
+    )
     agenthive_host: str = Field(default="0.0.0.0", alias="AGENTHIVE_HOST")
     agenthive_port: int = Field(default=8000, alias="AGENTHIVE_PORT")
     log_level: str = Field(default="INFO", alias="LOG_LEVEL")
@@ -52,11 +54,8 @@ class Settings(BaseSettings):
     ollama_base_url: str = Field(default="http://localhost:11434", alias="OLLAMA_BASE_URL")
     ollama_model: str = Field(default="llama3.2", alias="OLLAMA_MODEL")
 
-    # Security & Tenancy
-    cors_origins: str = Field(
-        default="http://localhost:5173,http://127.0.0.1:5173,http://localhost:3000",
-        alias="CORS_ORIGINS",
-    )
+    # Security & CORS (Defaults to * in demo so Vercel/Render frontends connect without CORS errors)
+    cors_origins: str = Field(default="*", alias="CORS_ORIGINS")
     demo_default_tenant: str = Field(default="alpha-eng", alias="DEMO_DEFAULT_TENANT")
     production_tenant_tokens_json: str = Field(
         default="{}", alias="PRODUCTION_TENANT_TOKENS_JSON"
@@ -64,7 +63,8 @@ class Settings(BaseSettings):
 
     @property
     def cors_origin_list(self) -> List[str]:
-        return [origin.strip() for origin in self.cors_origins.split(",") if origin.strip()]
+        raw = [origin.strip() for origin in self.cors_origins.split(",") if origin.strip()]
+        return raw if raw else ["*"]
 
     @property
     def production_tenant_tokens(self) -> Dict[str, str]:
@@ -81,7 +81,9 @@ class Settings(BaseSettings):
     def validate_control_graph(cls, v: str) -> str:
         clean = v.strip()
         if not clean or not clean.replace("_", "").isalnum():
-            raise ValueError("FALKORDB_CONTROL_GRAPH must be a safe alphanumeric/underscore identifier.")
+            raise ValueError(
+                "FALKORDB_CONTROL_GRAPH must be a safe alphanumeric/underscore identifier."
+            )
         return clean
 
     def validate_startup_security(self) -> None:
